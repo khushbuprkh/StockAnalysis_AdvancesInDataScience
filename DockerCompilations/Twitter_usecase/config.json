@@ -1,0 +1,13 @@
+ {
+  "consumerkey":"",
+  "consumersecret":"",
+  "accesstoken":"",
+  "accesstokensecret":"",
+  "googleusername":"",
+  "googlepassword":"",
+  "password": "",
+  "PostgreHost":"",
+  "PostgrePort":"",
+  "postgreUser":"",
+  "PostgrePassword":""
+}

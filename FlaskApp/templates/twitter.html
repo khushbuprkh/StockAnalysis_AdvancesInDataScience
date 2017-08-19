@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Prediction Algorithm</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="text-center" style="background: black;color:green">
+  <center><h1>Twitter Analysis</h1></center>
+</div>
+
+
+ <div class="container">   
+ <form method="POST" ation="/predict">    
+  <div class="dropdown2">
+	<h3><label for="sel2">Select company for twitter Analysis:</label></h3>
+    	<select name="selectList">
+			<option value="DOW">DOW30</option>
+            <option value="AAPL">APPLE</option>
+            <option value="T">ATT</option>
+			<option value="BAC">BANK OF AMERICA</option>
+            <option value="JNJ">JOHNSON AND JHONSON</option>
+            <option value="XOM"> Exxon Mobil Corporation</option>
+		</select>
+  </div>
+<div class="form-group">
+    <br>
+     <button type="submit" class="btn btn-primary">Get Prediction</button>
+  </div>
+ </form>
+</div>
+{% if Status is defined %}
+<div>
+<table class="table table-bordered table-hover text-center">
+    <thead>
+      <tr>
+	<th style="text-align: center">Stock</th>
+    <th style="text-align: center">Positive Tweets</th>
+    <th style="text-align: center">Total Tweets</th>
+    <th style="text-align: center">Total Useful Subjectivity</th>
+      </tr>
+    </thead>
+ <tbody>
+<tr>
+    <td>{{Status[0].values}}</td>
+    <td>{{Status[1].values}}</td>
+    <td>{{Status[2].values}}</td>
+    <td>{{Status[3].values}}</td>
+</tr>
+{% endif %}
+</tbody>
+</table>
+</div>     
+</body>
+</html>

@@ -1,0 +1,10 @@
+ {
+  "AWSAccess":"",
+  "AWSSecret":"",
+  "notificationEmail":"",
+  "password": "",
+  "PostgreHost":"",
+  "PostgrePort":"",
+  "postgreUser":"",
+  "PostgrePassword":""
+}

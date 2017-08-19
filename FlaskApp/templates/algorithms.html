@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Algorithms</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="text-center" style="background: black;color:green">
+  <h1>Algorithms</h1>
+  <p><i>Analyze before you buy or sell your stock!</i></p> 
+</div>
+  
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4">
+      <h3><center><b>Prediction Algorithms<b></center></h3>
+	  </br>
+      <center><a href="{{ url_for('index', page='prediction')}}"><img src="{{ url_for('static', filename = 'css/images/prediction.png') }}" class="img-rounded" alt="prediction" width="260" height="236"></a></center>
+    </div>
+    <div class="col-sm-4">
+      <h3><b><center>Classification Algorithms</<center></b></h3>
+	  </br>
+      <center><a href="{{ url_for('index', page='classification')}}"><img src="{{ url_for('static', filename = 'css/images/classification.png') }}" class="img-rounded" alt="classification" width="230" height="236"></a></center>
+    </div>
+<div class="col-sm-4">
+      <h3><b><center>Twitter Analysis</<center></b></h3>
+	  </br>
+      <center><a href="{{ url_for('index', page='twitter')}}"><img src="{{ url_for('static', filename = 'css/images/twitter.png') }}" class="img-rounded" alt="twitter" width="230" height="236"></a></center>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

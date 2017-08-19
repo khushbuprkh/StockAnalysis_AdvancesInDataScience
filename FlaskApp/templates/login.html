@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Stock Market Analysis</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="jumbotron text-center" style="background: black;color:green">
+  <h1>Stock Market Analysis</h1>
+  <p><i>Analyze before you buy or sell your stock!</i></p> 
+</div>
+  
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4">
+      <h3><center><b>STOCK ANALYSIS<b></center></h3>
+	  </br>
+      <center><a href="{{ url_for('index', page='stockanalysis')}}"><img src="{{ url_for('static', filename = 'css/images/piechart.png') }}" class="img-rounded" alt="pie chart" width="260" height="236"></a></center>
+    </div>
+    <div class="col-sm-4">
+      <h3><b><center>ALGORITHMS</<center></b></h3>
+	  </br>
+      <center><a href="{{ url_for('index', page='algorithms')}}"><img src="{{ url_for('static', filename = 'css/images/dollar.png') }}" class="img-rounded" alt="dollar" width="230" height="236"></a></center>
+    </div>
+    <div class="col-sm-4">
+      <h3><center><b>REGISTER</b></<center></h3>   
+	  </br>
+      <center><a href="{{ url_for('index', page='register')}}"><img src="{{ url_for('static', filename = 'css/images/user.png') }}" class="img-rounded" alt="user" width="230" height="236"></a></center>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

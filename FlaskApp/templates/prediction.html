@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Prediction Algorithm</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="text-center" style="background: black;color:green">
+  <center><h1>Prediction Algorithm</h1></center>
+</div>
+
+
+ <div class="container">   
+ <form method="POST" ation="/predict">    
+  <div class="dropdown2">
+	<h3><label for="sel2">Select to get prediction of stock price for next 7 days:</label></h3>
+    	<select name="selectList">
+			<option value="DOW30">DOW30</option>
+            <option value="APL">APPLE</option>
+            <option value="ATT">ATT</option>
+			<option value="BAC">BANK OF AMERICA</option>
+            <option value="JNJ">JOHNSON AND JHONSON</option>
+            <option value="XOM"> Exxon Mobil Corporation</option>
+		</select>
+  </div>
+<div class="form-group">
+    <br>
+     <button type="submit" class="btn btn-primary">Get Prediction</button>
+  </div>
+ </form>
+
+{% if Status is defined %}
+<div>
+<table class="table table-bordered table-hover text-center">
+    <thead>
+      <tr>
+	<th style="text-align: center">Day</th>
+    <th style="text-align: center">Predicted value</th>
+      </tr>
+    </thead>
+ <tbody>
+<tr>
+    <td>Day 1</td>
+    <td>{{Status[0]}}</td>
+</tr>
+<tr>
+    <td>Day 2</td>
+    <td>{{Status[1]}}</td>
+</tr>
+<tr>
+    <td>Day 3</td>
+    <td>{{Status[2]}}</td>
+</tr>  
+<tr>
+    <td>Day 4</td>
+    <td>{{Status[3]}}</td>
+</tr>
+<tr>
+    <td>Day 5</td>
+    <td>{{Status[4]}}</td>
+</tr>
+<tr>
+    <td>Day 6</td>
+    <td>{{Status[5]}}</td>
+</tr>
+<tr>
+    <td>Day 7</td>
+    <td>{{Status[6]}}</td>
+</tr>
+{% endif %}
+</tbody>
+</table>
+</div>     
+</div>
+
+</body>
+</html>
