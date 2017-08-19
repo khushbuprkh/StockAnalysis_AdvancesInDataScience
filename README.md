@@ -23,6 +23,20 @@ Feed Forward Neural Netowork
 ## MAPE:1.3% 
 
 
+## Docker Execution
+docker pull khushbuprkh/twitter
+docker run -ti khushbuprkh/twitter
+- in the bash : Vim config.json ## update the config file
+- in the bash : python twitter.py
+
+docker pull khushbuprkh/final
+docker run -ti khushbuprkh/final
+- in the bash : Vim config.json ## update the config file
+- in the bash : make
+
+## Video Link
+https://youtu.be/LETQ6bjLGhQ
+
 ## Thank you 
 
 
