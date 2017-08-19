@@ -1,14 +1,23 @@
 # Machine Learning on Stock Prediction 
-Ipython Notebook Folder conatins all the files for EDA , Training all Prediction(Linear Regression,Random Forest,Knn with Neural Network   Models interactively. 
+
+## Folders to watch : 
+### DockerCompilations :
+It contains all the required Python Script to run and make our models and recreate the Scenario that we have done. 
+
+### Ipython Notebook :
+Contains all the files for EDA , Training all Prediction(Linear Regression,Random Forest,Knn with Neural Network, LSTM, Twitter Sentiment Analysis Models interactively. 
+
+## MLAlgorithm: 
+Conatins the raw file generated file with can be used ditrectly , wothout compling the models. All Models are saved in Json and  HDF5 binary data format 
 
 
-Scope : DOW 30 and 
-TOP 5 Companies around the Industry: 
+## Scope : DOW 30 and TOP 5 Companies around the Industry: 
 Apple , AT&T , Exxon Mobil,Bank of America ,Jhonson & Jhonson 
 
-Prediction day Range : 1 -7 Days 
-Model Chosen : Feed Forward Neural Netowork 
-MAPE:1.3% 
+## Prediction day Range : 1 -7 Days 
+## Final Model Chosen : 
+Feed Forward Neural Netowork 
+## MAPE:1.3% 
 
 
 
