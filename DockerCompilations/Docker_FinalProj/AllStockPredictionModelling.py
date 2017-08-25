@@ -171,48 +171,13 @@ def knn(dow_norm,k):
 # In[11]:
 
 def getinformationCluster(cmvc,km):
-    print("Ranking of Clusters ");
-    print(str(cmvc))
-    print('************************************************************************')
-    print("Centroid for the K Means Clusters ")
-    kmean = pd.DataFrame(km.cluster_centers_)
-    kmean.columns=['X','Y','Z']
-    print(kmean)
-    print('************************************************************************')
-    
+ 
 
 
 # In[12]:
 
 def predictCluster(km,dow_norm,cmvc,clust_mat):
-    print("Getting the Latest Trade OHLC Values for DOW 30 ") 
-    testdoeN = dow_norm.copy()
-    print("*****************************************8")
-    
-    print(testdoeN.tail(1).values.reshape(-1,3))
-    predictedCluster = km.predict(testdoeN.tail(1).values.reshape(-1,3))[0]
-    print("Predicted Cluster of Last Trade OHLC Date "+ " "+ str(testdoeN.index[len(testdoeN)-1])+" "+ str(predictedCluster))
-    predictedNextCluster = []
-    for i,row in cmvc.iteritems():
-        if(i[0]==predictedCluster):
-            predictedNextCluster.append(i[1])
-    print("Predicted Next Day Cluster would be : "+ str(predictedNextCluster))
-    
-    probabCluster=[]
-    totalPrbablityfromPast=0
-    for i in predictedNextCluster:
-            totalPrbablityfromPast=totalPrbablityfromPast+clust_mat[predictedCluster][i]
-    #         probabCluster.append(clust_mat[predictedCluster][i])
-    print("Calulating the Relative Probablity ")
-    for i in predictedNextCluster:
-            probabCluster.append(clust_mat[predictedCluster][i]/totalPrbablityfromPast*100)
-            
-    nextClusterMatrix = pd.DataFrame(predictedNextCluster)
-    nextClusterMatrix.columns=["Cluster"]
-    nextClusterMatrix['Probability']=probabCluster
-    
-    print("Next Day CLuster and its Relative probablity from the Predicted Cluster : "+ str(predictedCluster))
-    print(nextClusterMatrix)
+	print("Please contanct maiti.t@husky.neu.edu")
     return nextClusterMatrix
     
 
@@ -220,8 +185,7 @@ def predictCluster(km,dow_norm,cmvc,clust_mat):
 # In[13]:
 
 def getRightClusteredData(nextClusterMatrix,dowtrain):
-    print("Getting the filtered Past data where the maximum predicted range of the next DAY OHLC would be.. ")
-    inputClusterone = dowtrain[dowtrain['Cluster']==nextClusterMatrix['Cluster'][0]]
+	
     return inputClusterone
     
 
@@ -238,21 +202,7 @@ def testingModel(i):
             inputdata = inputClusterone.copy()
             
             dataset1 = get_indicators(inputClusterone,i)
-            if(i ==1):
-                print("Getting the features for Test data ")
-                testdata = dataset1.tail(1)
-                joblib.dump(testdata, fileDir+ '/stockMarketModels/'+str(stock)+'/'+str(stock)+'testdata1.pkl')
-            
-            print("**********Checking Process")
-            print(inputdata.tail(5))
-            print("_________________________________________")
-            print(dataset1.tail(5))
-
-            print("Making The Training Dataset")
-            traindataset = dataset1.head(len(dataset1)-2)
-
-            trainY = np.array(traindataset['closePrice'])[i:]
-            trainX, numbFeatures = create_dataset1(traindataset,i)
+          
             
             #################Modelling Neural Network ##########################
             m,h = modellingNeuralNetwork(trainX,trainY,numbFeatures,i)
@@ -318,19 +268,9 @@ def runprogram(stock):
     
     getinformationCluster(cmvc,km)
     
-    nextClusterMatrix = predictCluster(km,testDataLatestTrade,cmvc,clust_mat)
-    
-    inputClusterone = getRightClusteredData(nextClusterMatrix,dowtrain)
-    
-    inputClusterone.append(dow.tail(1))
-    print("Input Data ::::::::::::::::::::::::::::::::::::::::::")
-    print(inputClusterone.tail(1))
-    print(":::::::::::::::::::::::::::::::::::::::::::::::::::::")
-    joblib.dump(inputClusterone, fileDir+ '/stockMarketModels/'+str(stock)+'/'+str(stock)+'inputClusterone.pkl')
-    
-    
+ 
     p = Pool(20)
-    p.map(testingModel, range (1,8))
+    #p.map(testingModel, range (1,8))
     print("Total Time Taken to Model %s seconds ---" % (time.time() - starttime))
     
  
